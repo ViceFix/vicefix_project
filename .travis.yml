@@ -2,8 +2,9 @@ language: java
 before_install:
   - chmod +x deploy/version.sh
 install:
-  - deploy/version.sh
   - mvn clean install -Dmaven.javadoc.skip=true -B -V
+after_install:
+  - deploy/version.sh
 branches:
   only:
   - gh-pages
